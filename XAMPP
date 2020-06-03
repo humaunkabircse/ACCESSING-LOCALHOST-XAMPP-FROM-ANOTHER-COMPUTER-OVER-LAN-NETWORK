@@ -1,0 +1,12 @@
+ACCESSING LOCALHOST (XAMPP) FROM ANOTHER COMPUTER OVER LAN NETWORK
+Posted on February 21, 2019 by Ravi Thanki
+1. Go to Your XAMPP Control panel
+2. Click on apache > config > Apache (httpd.conf)
+3. Search for Listen 80 and replace with Listen 8080
+4. After that check your local ip using ipconfig command (cmd console)
+5. Search for ServerName localhost:80 and replace with your local ip:8080 (ex.192.168.1.156:8080)
+6. After that open apache > config > Apache (httpd-xampp.conf)
+7. Search for Alias /phpmyadmin “C:/xampp/phpMyAdmin/” AllowOverride AuthConfig Require local Replace with Require all granted ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+8. Go to xampp > config > click on service and port setting and change apache port 8080
+9. restart xampp
+10.Then hit your ip:8080 (ex.xxx.xxx.x.xxx:8080) from other computer
